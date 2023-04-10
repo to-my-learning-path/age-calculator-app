@@ -1,0 +1,21 @@
+@tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: Poppins;
+    font-weight: 700;
+    src: url(./assets/fonts/Poppins-Bold.ttf) format("tff");
+  }
+  @font-face {
+    font-family: Poppins;
+    font-weight: 400;
+    src: url(./assets/fonts/Poppins-Italic.ttf) format("tff");
+  }
+  @font-face {
+    font-family: Poppins;
+    font-weight: 800;
+    src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf) format("tff");
+  }
+}
+@tailwind components;
+@tailwind utilities;
