@@ -4,7 +4,7 @@ import AgeCalculator from "./components/AgeCalculator";
 
 function App() {
   return (
-    <main className=" grid place-content-center">
+    <main className=" bg-offWhite min-h-screen grid place-content-center">
       <AgeCalculator />
     </main>
   );

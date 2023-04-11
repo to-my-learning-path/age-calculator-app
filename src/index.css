@@ -1,20 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
 @tailwind base;
 
 @layer base {
-  @font-face {
-    font-family: Poppins;
-    font-weight: 700;
-    src: url(./assets/fonts/Poppins-Bold.ttf) format("tff");
-  }
-  @font-face {
-    font-family: Poppins;
-    font-weight: 400;
-    src: url(./assets/fonts/Poppins-Italic.ttf) format("tff");
-  }
-  @font-face {
-    font-family: Poppins;
-    font-weight: 800;
-    src: url(./assets/fonts/Poppins-ExtraBoldItalic.ttf) format("tff");
+  body {
+    font-family: "Poppins", sans-serif;
   }
 }
 @tailwind components;

@@ -15,16 +15,16 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
 
 ## Overview
 
-<!-- ### Screenshot
+### Screenshot
 
 ![Desktop View](./screenshot/screenshot_1.png)
 ![Mobile View](./screenshot/screenshot_2.png)
-![Mobile View with menu](./screenshot/screenshot_3.png) -->
+![Mobile View with menu](./screenshot/screenshot_3.png)
 
-<!-- ### Links
+### Links
 
 - Solution URL: [Github Repo](https://github.com/to-my-learning-path/age-calculator-app)
-- Live Site URL: [Github Pages](https://to-my-learning-path.github.io/age-calculator-app) -->
+- Live Site URL: [Github Pages](https://to-my-learning-path.github.io/age-calculator-app)
 
 ## My process
 
