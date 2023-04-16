@@ -3,7 +3,8 @@ import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import SubmitButton from "../../assets/images/icon-arrow.svg";
+import Form from "./Form";
+import Display from "./Display";
 
 const formSchema = z
   .object({
@@ -33,14 +34,6 @@ const formSchema = z
 
 type FormSchemaProp = z.infer<typeof formSchema>;
 
-type formInputProp = {
-  register: any;
-  errors: any;
-  text: string;
-  size: number;
-  placeholder: string;
-};
-
 const AgeCalculator = () => {
   const [date, setDate] = useState({
     day: "--",
@@ -66,90 +59,19 @@ const AgeCalculator = () => {
       month: age.getUTCMonth().toString(),
       year: (age.getUTCFullYear() - 1970).toString(),
     });
-    console.log(date);
-    console.log(birthDate);
   };
 
   return (
     <div className=" md:min-w-[40rem] px-4 md:px-8 py-8 font-Poppins bg-white rounded-xl rounded-br-[5rem] shadow-sm">
-      <div className=" border-b-2 border-b-lightGrey relative">
-        <form
-          onSubmit={handleSubmit(handleOnSubmit)}
-          className=" flex flex-col items-center"
-        >
-          <div className=" flex items-center justify-between gap-4 md:self-start">
-            <FormInput
-              register={register}
-              errors={errors}
-              text="day"
-              size={2}
-              placeholder="DD"
-            />
-            <FormInput
-              register={register}
-              errors={errors}
-              text="month"
-              size={2}
-              placeholder="MM"
-            />
-            <FormInput
-              register={register}
-              errors={errors}
-              text="year"
-              size={4}
-              placeholder="YYYY"
-            />
-          </div>
-          <button
-            type="submit"
-            className=" md:-mt-12 bg-purple rounded-full p-4 w-fit translate-y-1/2 md:self-end"
-          >
-            <img src={SubmitButton} alt="" />
-          </button>
-        </form>
-      </div>
-      <div className=" pt-16 md:pt-8 text-center md:text-left">
-        <p className=" italic font-bold text-5xl md:text-6xl text-fontSizeInput">
-          <span className=" text-purple mr-2">{date.year}</span>years
-        </p>
-        <p className=" italic font-bold text-5xl md:text-6xl text-fontSizeInput">
-          <span className=" text-purple mr-2">{date.month}</span>months
-        </p>
-        <p className=" italic font-bold text-5xl md:text-6xl text-fontSizeInput">
-          <span className=" text-purple mr-2">{date.day}</span>days
-        </p>
-      </div>
+      <Form
+        handleSubmit={handleSubmit}
+        register={register}
+        errors={errors}
+        handleOnSubmit={handleOnSubmit}
+      />
+      <Display date={date} />
     </div>
   );
 };
-
-const FormInput = ({
-  register,
-  errors,
-  text,
-  size,
-  placeholder,
-}: formInputProp) => (
-  <div className=" flex flex-col md:text-2xl">
-    <label
-      className={` ${
-        errors[text] ? "text-lightRed" : "text-smokeyGrey"
-      } uppercase text-xs tracking-widest pb-2 `}
-      htmlFor={text}
-    >
-      {text}
-    </label>
-    <input
-      {...register(text)}
-      className={` ${
-        errors[text] ? "border-lightRed" : "border-smokeyGrey"
-      } font-bold border  rounded p-2`}
-      size={size}
-      type="text"
-      placeholder={placeholder}
-    />
-    <p className=" text-lightRed italic text-xs">{errors[text]?.message}</p>
-  </div>
-);
 
 export default AgeCalculator;
